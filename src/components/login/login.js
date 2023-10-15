@@ -20,9 +20,13 @@ const Login = ({ setLoginUser }) => {
   };
 
   const login = () => {
-    axios.post("http://localhost:9002/login", user).then((res) => {
+    axios.post("http://localhost:9002/api/v1/login", user).then((res) => {
       alert(res.data.message);
       setLoginUser(res.data.user);
+
+      // Save the token in the local storage
+      localStorage.setItem("accessToken", res.data.token);
+
       navigate("/");
     });
   };

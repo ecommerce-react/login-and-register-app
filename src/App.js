@@ -1,12 +1,32 @@
-import "./App.css";
+import { useState, useEffect } from "react";
 import Homepage from "./components/homepage/homepage";
 import Login from "./components/login/login";
 import Register from "./components/register/register";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { useState } from "react";
+import "./App.css";
+import axios from "axios";
 
 function App() {
   const [user, setLoginUser] = useState({});
+
+  useEffect(() => {
+    const token = localStorage.getItem("accessToken");
+
+    let config = {
+      headers: {
+        authorization: token,
+      },
+    };
+
+    axios
+      .post("http://localhost:9002/api/v1/user-logged-in", {}, config)
+      .then((res) => {
+        setLoginUser(res.data.user);
+
+        // Save the token in the local storage
+        localStorage.setItem("accessToken", res.data.token);
+      });
+  }, []);
 
   return (
     <div className="App">
