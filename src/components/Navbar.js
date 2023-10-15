@@ -23,7 +23,7 @@ const Navbar = () => {
 
             <Button
               component={NavLink}
-              to="/login"
+              to="/contact"
               style={({ isActive }) => {
                 return { backgroundColor: isActive ? "#6d1b7b" : "" };
               }}
@@ -34,13 +34,23 @@ const Navbar = () => {
 
             <Button
               component={NavLink}
-              to="/register"
+              to="/login"
               style={({ isActive }) => {
                 return { backgroundColor: isActive ? "#6d1b7b" : "" };
               }}
               sx={{ color: "white", textTransform: "none" }}
             >
               Login/Registration
+            </Button>
+            <Button
+              component={NavLink}
+              to="/loginreg"
+              style={({ isActive }) => {
+                return { backgroundColor: isActive ? "#6d1b7b" : "" };
+              }}
+              sx={{ color: "white", textTransform: "none" }}
+            >
+              LoginReg
             </Button>
           </Toolbar>
         </AppBar>

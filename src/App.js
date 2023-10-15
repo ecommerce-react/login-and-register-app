@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Login, Register, Homepage } from "./pages";
+import { Login, Register, Homepage, Contact, LoginReg } from "./pages";
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
@@ -50,6 +50,8 @@ function App() {
             element={<Login setLoginUser={setLoginUser} />}
           />
           <Route path="/register" element={<Register />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/LoginReg" element={<LoginReg />} />
         </Routes>
       </Router>
     </div>
