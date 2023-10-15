@@ -21,7 +21,6 @@ const Login = ({ setLoginUser }) => {
 
   const login = () => {
     axios.post("http://localhost:9002/api/v1/login", user).then((res) => {
-      alert(res.data.message);
       setLoginUser(res.data.user);
 
       // Save the token in the local storage

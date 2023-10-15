@@ -7,7 +7,9 @@ const Layout = () => {
     <>
       <CssBaseline />
       <Navbar />
-      <Outlet />
+      <div style={{ marginTop: "64px" }}>
+        <Outlet />
+      </div>
     </>
   );
 };

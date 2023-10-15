@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import Homepage from "./pages/homepage/homepage";
-import Login from "./pages/auth/login/login";
-import Register from "./pages/auth/register/register";
+import { Login, Register, Homepage } from "./pages";
+import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import axios from "axios";
@@ -31,6 +30,10 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <div>
+          <Navbar />
+        </div>
+
         <Routes>
           <Route
             path="/"
